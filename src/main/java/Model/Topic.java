@@ -11,7 +11,7 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int topicId;
 
-    @Column(name = "topic_name")
+    @Column
     private String name;
 
     @OneToMany(mappedBy = "topic")

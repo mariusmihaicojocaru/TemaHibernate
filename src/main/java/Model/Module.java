@@ -12,10 +12,10 @@ public class Module {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int moduleId;
 
-    @Column (name = "start_date")
+    @Column
     private Date startDate;
 
-    @Column (name = "end_date")
+    @Column
     private Date endDate;
 
     @OneToMany(mappedBy = "attendance")
@@ -30,7 +30,7 @@ public class Module {
     private Topic topic;
 
     @ManyToOne
-    @JoinColumn(name = "personId", foreignKey = @ForeignKey(name = "fk_module_student"))
+    @JoinColumn(name = "trainerId", foreignKey = @ForeignKey(name = "fk_module_student"))
     private Person person;
 
     @ManyToOne

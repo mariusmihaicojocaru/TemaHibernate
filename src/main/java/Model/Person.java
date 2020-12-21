@@ -10,25 +10,25 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //strategie folosita pentru generarea ID-ului
-    @Column (name = "personID")
+    @Column
     private int personId;
 
-    @Column (name = "first_name")
+    @Column
     private String firstName;
 
-    @Column (name = "last_name")
+    @Column
     private String lastName;
 
-    @Column (name = "email")
+    @Column
     private String email;
 
-    @Column (name = "date_of_birth")
+    @Column
     private Date dateOfBirth;
 
-    @Column (name = "is_trainer")
+    @Column
     private boolean isTrainer;
 
-    @Column (name = "team_id")
+    @Column
     private int teamId;
 
     @OneToMany(mappedBy = "person")
@@ -38,7 +38,7 @@ public class Person {
     private List<Attendance> attendance;
 
     @ManyToOne
-    @JoinColumn(name = "teamId", foreignKey = @ForeignKey(name = "fk_student_team"))
+    @JoinColumn(name = "teamId", foreignKey = @ForeignKey(name = "fk_student_team"), insertable = false, updatable = false)
     private Team team;
 
     public Person(){}
@@ -106,7 +106,7 @@ public class Person {
     }
 
     public void setTrainer (boolean trainer) {
-        isTrainer = trainer;
+        this.isTrainer = trainer;
     }
 
     public int getTeamId () {

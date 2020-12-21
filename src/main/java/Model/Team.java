@@ -9,16 +9,16 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //strategie folosita pentru generarea ID-ului
-    @Column (name = "teamID")
-    private int teamID;
+    @Column
+    private int teamId;
 
-    @Column (name = "team_name")
+    @Column
     private String name;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "module")
     private List<Module> module;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "person")
     private List<Person> person;
 
     public Team () {}
@@ -28,11 +28,11 @@ public class Team {
     }
 
     public int getTeamID () {
-        return teamID;
+        return teamId;
     }
 
     public void setTeamID (int teamID) {
-        this.teamID = teamID;
+        this.teamId = teamID;
     }
 
     public String getName () {

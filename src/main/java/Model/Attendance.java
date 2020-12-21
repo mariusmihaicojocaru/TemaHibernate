@@ -1,6 +1,7 @@
 package Model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(schema = "classroom", name = "attendances")
@@ -10,10 +11,10 @@ public class Attendance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int attendanceId;
 
-    @Column(name = "attendance_date")
-    private String name;
+    @Column
+    private Date date;
 
-    @Column(name = "is_present")
+    @Column
     private boolean isPresent;
 
     @ManyToOne
@@ -21,29 +22,29 @@ public class Attendance {
     private Module module;
 
     @ManyToOne
-    @JoinColumn(name = "personId", foreignKey = @ForeignKey(name = "fk_attendance_student"))
+    @JoinColumn(name = "attendanceId",foreignKey = @ForeignKey(name = "fk_attendance_student"))
     private Attendance attendance;
 
     public Attendance(){}
 
-    public Attendance(String name, boolean isPresent){
-        this.name = name;
+    public Attendance(Date date, boolean isPresent){
+        this.date = date;
         this.isPresent = isPresent;
     }
 
-    public Attendance (String name, boolean isPresent, Module module, Attendance attendance) {
-        this.name = name;
+    public Attendance (Date date, boolean isPresent, Module module, Attendance attendance) {
+        this.date = date;
         this.isPresent = isPresent;
         this.module = module;
         this.attendance = attendance;
     }
 
-    public String getName () {
-        return name;
+    public Date getDate () {
+        return date;
     }
 
-    public void setName (String name) {
-        this.name = name;
+    public void setDate (Date date) {
+        this.date = date;
     }
 
     public boolean isPresent () {
@@ -69,7 +70,7 @@ public class Attendance {
     @Override
     public String toString () {
         return "Attendance{" +
-                "name='" + name + '\'' +
+                "name='" + date + '\'' +
                 ", isPresent=" + isPresent +
                 '}';
     }

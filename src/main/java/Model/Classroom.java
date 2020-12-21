@@ -11,10 +11,10 @@ public class Classroom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int classroomId;
 
-    @Column(name = "classroom_name")
+    @Column
     private String name;
 
-    @Column(name = "address")
+    @Column
     private String address;
 
     @OneToMany(mappedBy = "classroom")
