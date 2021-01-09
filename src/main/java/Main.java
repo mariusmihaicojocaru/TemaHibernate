@@ -22,7 +22,14 @@ public class Main {
 
         PersonRepository personRepository = new PersonRepository();
 
+        System.out.println ("TRAINERS:");
+        personRepository.getAllTrainers ();
+
+        System.out.println ("_______________________________");
+        System.out.println ("STUDENTS:");
         personRepository.getAllStudents ();
+
+
 
 
 //        for(Person person : personList){
