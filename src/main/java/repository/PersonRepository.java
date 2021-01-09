@@ -1,8 +1,7 @@
-package Repository;
+package repository;
 
-import Connection.HibernateUtils;
-import Model.Person;
-import com.mysql.cj.xdevapi.Result;
+import connection.HibernateUtils;
+import model.Person;
 import org.hibernate.Session;
 
 

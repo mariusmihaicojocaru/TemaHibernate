@@ -1,14 +1,6 @@
-import Connection.HibernateUtils;
-import Model.Person;
-import Repository.PersonRepository;
+import connection.HibernateUtils;
+import repository.PersonRepository;
 import org.hibernate.Session;
-
-
-import java.sql.SQLException;
-import java.sql.Date;
-import java.util.List;
-
-import static Connection.HibernateUtils.sessionFactory;
 
 public class Main {
     public static void main (String[] args) {
