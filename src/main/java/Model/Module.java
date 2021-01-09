@@ -34,7 +34,7 @@ public class Module {
     private Person person;
 
     @ManyToOne
-    @JoinColumn(name = "teamId", foreignKey = @ForeignKey(name = "fk_module_trainer"))
+    @JoinColumn(name = "teamId", foreignKey = @ForeignKey(name = "fk_module_team"))
     private Team team;
 
     public Module () {}

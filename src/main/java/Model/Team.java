@@ -15,10 +15,10 @@ public class Team {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "module")
+    @OneToMany(mappedBy = "moduleId")
     private List<Module> module;
 
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "personId")
     private List<Person> person;
 
     public Team () {}
@@ -41,6 +41,30 @@ public class Team {
 
     public void setName (String name) {
         this.name = name;
+    }
+
+    public int getTeamId () {
+        return teamId;
+    }
+
+    public void setTeamId (int teamId) {
+        this.teamId = teamId;
+    }
+
+    public List<Module> getModule () {
+        return module;
+    }
+
+    public void setModule (List<Module> module) {
+        this.module = module;
+    }
+
+    public List<Person> getPerson () {
+        return person;
+    }
+
+    public void setPerson (List<Person> person) {
+        this.person = person;
     }
 
     @Override

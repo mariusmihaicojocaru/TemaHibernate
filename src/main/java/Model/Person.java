@@ -29,7 +29,7 @@ public class Person {
     private boolean isTrainer;
 
     @Column
-    private int teamId;
+    private Integer teamId;
 
     @OneToMany(mappedBy = "person")
     private List<Module> module;

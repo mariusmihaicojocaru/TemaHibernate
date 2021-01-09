@@ -22,7 +22,7 @@ public class Attendance {
     private Module module;
 
     @ManyToOne
-    @JoinColumn(name = "attendanceId",foreignKey = @ForeignKey(name = "fk_attendance_student"))
+    @JoinColumn(name = "attendanceId",foreignKey = @ForeignKey(name = "fk_attendance_student"), insertable = false, updatable = false)
     private Attendance attendance;
 
     public Attendance(){}
